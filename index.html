@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8</title>
+</head>
+<body>
+    <h1> A local storage Example</h1>
+        <!--Button to display info-->
+    <button id="showName">Show me</button>
+
+    
+    <h2>Session Storage</h2>
+    <p id="demo">0</p>
+    <p><button onclick="clickCounter()" type="button">Count</button></p>
+
+    <!--Button to display info-->
+        <script>
+            <!-- created local storage info and gave label & value-->
+            let myName = localStorage.setItem("name", "LuceroH");
+            //this will display the info after button is clicked
+            document.getElementById('showName').addEventListener('click', e => {
+                alert(localStorage.getItem('name'))
+            });
+            function clickCounter() {
+  if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+  } else {
+    sessionStorage.clickcount = 1;
+    }
+  document.getElementById("demo").innerHTML = sessionStorage.clickcount;
+}
+        </script>
+
+</body>
+</html>
